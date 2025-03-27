@@ -1,0 +1,29 @@
+curl --location 'localhost:3000/produtos/' \
+--data ''
+
+curl --location 'localhost:3000/produtos/' \
+--header 'Content-Type: application/json' \
+--data '{
+        "nome": "Celular Nokia",
+        "fornecedor": "Nokia",
+        "endereco_fornecedor": "Rua Nokia",
+        "quantidade": 1,
+        "endereco": "Rua dos celulares",
+        "preco_unitario": 40.0
+    }
+'
+
+curl --location --request PUT 'localhost:3000/produtos/15' \
+--header 'Content-Type: application/json' \
+--data '{
+        "nome": "novo produto",
+        "fornecedor": "novo fornecedor",
+        "endereco_fornecedor": "nova rua",
+        "quantidade": 100,
+        "endereco": "avenida xyz",
+        "preco_unitario": 75.5
+    }
+'
+
+curl --location --request DELETE 'localhost:3000/produtos/15' \
+--data ''
